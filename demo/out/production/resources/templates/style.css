@@ -1,0 +1,64 @@
+.col-sm-4 {
+    padding-left:0px;
+    padding-top:5px;
+}
+
+.form-control {
+    width:100%;
+}
+
+.col-sm-4 {
+    padding-left:0px;
+    padding-top:5px;
+}
+
+.row-fluid {
+    margin-top:8px;
+}
+
+#content {
+    padding: 20px;
+    text-align: center;
+}
+
+#loginForm {
+    width:350px;
+    display:inline-block;
+}
+
+#managerLoginLabel {
+    background-color:#F9F9F9;
+    border-bottom:2px solid #DDDDDD;
+    padding:8px;text-align:center;
+    font-size:12px;
+    height:33px;
+    font-weight:bold;
+}
+
+/*
+.form-control > in
+#idInputForm {
+    border-bottom:1px solid #DDDDDD;
+    padding:8px;
+    width:300px;
+    text-align:center;
+    font-size:12px;
+    overflow:hidden;
+}
+
+#passwordForm {
+    border-bottom:1px solid #DDDDDD;
+    padding:8px;
+    width:300px;
+    text-align:center;
+    font-size:12px;
+    overflow:hidden;
+}
+
+#inputID {
+    width: 300px;
+}
+
+#inputPassword {
+    width: 300px;
+}*/

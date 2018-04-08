@@ -13,12 +13,14 @@ public class PostController {
     @RequestMapping(value = "/posts/new", method = RequestMethod.GET)
     public String newPost(Model model) {
         model.addAttribute("post", new Post());
+
         return "new";
     }
 
     @RequestMapping(value = "/posts", method = RequestMethod.POST)
     public String createPost(@ModelAttribute Post post, Model model) {
         model.addAttribute("post", post);
+
         return "show";
     }
 }
