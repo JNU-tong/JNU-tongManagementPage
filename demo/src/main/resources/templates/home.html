@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Spring Security Example</title>
+    <script language="JavaScript">
+        function nextWin()
+        {location = "http://localhost:8080/hello"}
+    </script>
 </head>
-<body>
+<body onLoad="setTimeout('nextWin()', 5000)">
     <h1>Welcome!</h1>
+    <h2>제대로 통한다 JNU-Tong</h2>
+    <h2>Management Page!</h2>
     <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
 </body>
 </html>
