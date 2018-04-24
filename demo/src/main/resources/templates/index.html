@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>JNU-Tong Management Login page</title>
-    <link rel="stylesheet" type="text/css" href="login_css.css">
+    <link rel="stylesheet" type="text/css">
 </head>
 <body>
     <center>
@@ -15,7 +15,7 @@
         <div th:if="${param.logout}">
             You have been logged out.
         </div>
-        <form th:action="@{/login}" name="login" method="post">
+        <form th:action="@{/index}" name="login" method="post">
             <br/>
             <table id = "table">
                 <tr>
