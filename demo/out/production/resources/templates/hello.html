@@ -9,9 +9,10 @@
     <link rel="stylesheet" type="text/css" href="Main.css">
     <style>
         * { margin: 0; padding: 0;}
-        body { font-family: 'Josefin Sans', sans-serif; }
+        body { font-family: 'Josefin Sans', sans-serif; height: 100%}
         li { list-style: none; }
         a { text-decoration: none; }
+
         #main_header {
             height: 60px;
             line-height: 60px;
@@ -20,6 +21,7 @@
 
             padding: 10px;
         }
+
         #main_gnb {
             overflow: hidden;
             border-bottom: 1px solid black;
@@ -56,7 +58,7 @@
         }
         #wrap {
             overflow: hidden;
-            height: 750px;
+            height: 100%;
 
         }
         #wrap > #main_lnb {
@@ -90,9 +92,10 @@
             background: white;
             border-left: 1px solid black;
         }
+
         article {
             padding: 10px;
-            height: 750px;
+            height: 1000px;
 
         }
         #main_footer {
@@ -148,19 +151,33 @@
             padding-top: 40px;
             padding-left: 30px;
         }
+
+        #account {
+            float: right;
+            height: 30px;
+        }
+
     </style>
 </head>
 <body>
-    <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
-    </nav>
+    <!--<nav>
+        <div id="account">
+            <div id="hello" th:id="printHello" style="float: left; margin: 10px 10px">
+                <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
+            </div>
+            <div id="btnsignout" th:id="signoutBtn" style="float: left; margin: 10px 10px">
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="Sign Out"/>
+                </form>
+            </div>
+        </div>
+    </nav>-->
     <div id="wrap">
         <nav id="main_lnb">
             <ul>
-                <div id = "image"><img src = "/%EC%A0%9C%ED%86%B5%ED%81%B0%EA%B1%B02.png"></div>
-
+                <div id = "image">
+                    <img src = "/img/jnutong-logo.png">
+                </div>
                 <div id="padding_height"></div>
                 <li><a href="#">버스 관리</a></li>
                 <hr noshade size="1">
@@ -172,6 +189,18 @@
         <div id="content_wrap">
             <div id="content">
                 <article>
+                    <nav>
+                        <div id="account">
+                            <div id="hello" th:id="printHello" style="float: left; margin: 10px 10px">
+                                <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
+                            </div>
+                            <div id="btnsignout" th:id="signoutBtn" style="float: left; margin: 10px 10px">
+                                <form th:action="@{/logout}" method="post">
+                                    <input type="submit" value="Sign Out"/>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
                     <h1 id="main1">관리자 페이지</h1>
                     <hr noshade size="1">
 
