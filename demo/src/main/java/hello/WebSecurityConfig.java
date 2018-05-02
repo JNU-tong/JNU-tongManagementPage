@@ -50,6 +50,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         LinkedList<Manager> managers = null;
         try {
             managers = managerDao.get();
+            for (Manager m : managers) {
+                System.out.println(m);
+            }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

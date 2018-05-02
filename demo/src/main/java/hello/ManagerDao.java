@@ -4,10 +4,10 @@ import java.sql.*;
 import java.util.LinkedList;
 
 public class ManagerDao {
+    private ConnectionMaker connectionMaker = new JnuTongConnectionMaker();
+
     public LinkedList<Manager> get() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost/jnutongmanagers", "root", "sslabflask");
+        Connection connection = connectionMaker.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(
                 "SELECT * from managers");
         LinkedList<Manager> managers = new LinkedList<>();
@@ -29,4 +29,10 @@ public class ManagerDao {
 
         return managers;
     }
+
+    /* {
+        Class.forName("com.mysql.jdbc.Driver");
+        return DriverManager.getConnection(
+                "jdbc:mysql://localhost/jnutongmanagers", "root", "sslabflask");
+    }*/
 }

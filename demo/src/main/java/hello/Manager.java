@@ -37,4 +37,14 @@ public class Manager {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "num=" + num +
+                ", id='" + id + '\'' +
+                ", role='" + role + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
