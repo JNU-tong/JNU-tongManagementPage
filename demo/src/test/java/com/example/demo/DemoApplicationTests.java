@@ -21,11 +21,18 @@ public class DemoApplicationTests {
 
 		// bus station information
 		JnuBusStationDao jnuBusStationDao = new JnuBusStationDao();
-		int id = 1;
-		JnuBusStation jnuBusStation = jnuBusStationDao.get(id);
+		int bus_station_id = 1;
+		JnuBusStation jnuBusStation = jnuBusStationDao.get(bus_station_id);
 		System.out.println(jnuBusStation.getId());
 		System.out.println(jnuBusStation.getStationName());
 
+		JnuBusScheduleDao jnuBusScheduleDao = new JnuBusScheduleDao();
+		int jnu_bus_schedule_id = 1;
+		JnuBusSchedule jnuBusSchedule = jnuBusScheduleDao.get(jnu_bus_schedule_id);
+		System.out.println(jnuBusSchedule.getId());
+		System.out.println(jnuBusSchedule.getDeparture_time());
+		System.out.println(jnuBusSchedule.getCourse());
+		System.out.println(jnuBusSchedule.getGo_ocean_science());
 	}
 
 }

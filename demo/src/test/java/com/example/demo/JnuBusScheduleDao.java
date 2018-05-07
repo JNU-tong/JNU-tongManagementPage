@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import hello.JnuTongConnectionMaker;
-
 import java.sql.*;
 
 public class JnuBusScheduleDao {
@@ -20,5 +18,13 @@ public class JnuBusScheduleDao {
         JnuBusSchedule jnuBusSchedule = new JnuBusSchedule();
         jnuBusSchedule.setId(resultSet.getInt("id"));
         jnuBusSchedule.setDeparture_time(resultSet.getTime("departure_time"));
+        jnuBusSchedule.setCourse(resultSet.getString("course"));
+        jnuBusSchedule.setGo_ocean_science(resultSet.getInt("go_ocean_science"));
+
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+
+        return jnuBusSchedule;
     }
 }
