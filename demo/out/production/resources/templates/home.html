@@ -1,11 +1,21 @@
+<!-- by 혜원 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <title>Spring Security Example</title>
+    <script language="JavaScript">
+        function nextWin()
+        {location = "http://localhost:8080/hello"}
+    </script>
 </head>
-<body>
-    <h1>Welcome!</h1>
-    <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+<body onLoad="setTimeout('nextWin()', 5000)">
+    <center>
+        <img src = "/img/jnutong.PNG" style="width: 250px; height: 300px">
+        <h1>Welcome!</h1>
+        <h2>제대로 통한다 JNU-Tong</h2>
+        <h2>Management Page!</h2>
+        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+    </center>
 </body>
 </html>
