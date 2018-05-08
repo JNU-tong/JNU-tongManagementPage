@@ -32,7 +32,6 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.security:spring-security-test')
 	compile("org.springframework.boot:spring-boot-starter-security")
-
 	compile 'mysql:mysql-connector-java:5.1.37'
 	compile "org.springframework:spring-context:${springVersion}"
 	compile "org.springframework:spring-beans:${springVersion}"
