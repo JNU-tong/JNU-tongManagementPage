@@ -1,4 +1,5 @@
 <!-- 혜원 코드 -->
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -9,7 +10,6 @@
     <style>
         /* 혜원 코드 */
         * { margin: 0; padding: 0;}
-
         body {
             font-family: 'Josefin Sans', sans-serif;
         }
@@ -162,18 +162,18 @@
 <div id="wrap">
     <nav id="main_lnb">
         <ul>
+
             <div class="sidenav">
-                <div id = "image">
-                    <a href="hello">
-                        <img src = "/img/jnutong-logo.png">
-                    </a>
-                </div>
-                <button class="dropdown-btn">버스 관리
+
+                <div id = "image"><a href="hello"><img src = "/img/jnutong-logo.png"></a></div>
+
+                <button class="dropdown-btn">
+                    <div>버스 관리</div>
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-container">
-                    <a href="/bus_one">시내 버스</a>
-                    <a href="/bus_two">교내 버스</a>
+                    <a href="bus_one">시내 버스</a>
+                    <a href="bus_two">교내 버스</a>
                 </div>
                 <a href="#contact">기타 관리</a>
             </div>
@@ -213,12 +213,19 @@
         <div id="content_wrap">
             <div id="content">
                 <article>
-                    <div id = "head">
-                        관리자 페이지
+                    <div id = "head">관리자 페이지
                     </div>
                     <hr id = "line">
+                    <select name="option" id="opt">
+                        <option value="">선택</option>
+                        <option value="학기중">학기 중</option>
+                        <option value="방학">방학/공휴일</option>
+                    </select>
+                    <button type="button" id ="bt">확인</button>
+
                 </article>
-                </article>
+
+
             </div>
         </div>
     </section>

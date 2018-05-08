@@ -1,237 +1,227 @@
-<!-- by 혜원 -->
+<!-- 혜원 코드 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>관리자 페이지</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat|Rammetto+One" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="Main.css">
     <style>
+        /* 혜원 코드 */
         * { margin: 0; padding: 0;}
-        body { font-family: 'Josefin Sans', sans-serif; height: 100%}
+
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
         li { list-style: none; }
         a { text-decoration: none; }
 
-        #main_header {
-            height: 60px;
-            line-height: 60px;
-            padding-left: 30px;
-            border-bottom: 1px solid black;
-
-            padding: 10px;
-        }
-
-        #main_gnb {
-            overflow: hidden;
-            border-bottom: 1px solid black;
-            background: #32394A;
-        }
-        #main_gnb > ul.left {
-            overflow: hidden;
-            float: left;
-        }
-
-        #main_gnb > ul.right {
-            overflow: hidden;
-            float: right;
-        }
-
-        #main_gnb > ul.left > li { float: left; }
-        #main_gnb > ul.right > li { float: left; }
-
-        #main_gnb a {
-            display: block;
-            padding: 10px 20px;
-
-            border-left: 1px solid #5F6673;
-            border-right: 1px solid #242A37;
-            color: white;
-        }
-
-        #padding_height{
-            padding: 50px;
-            padding-top: 0px;
-        }
-        #main1{
-            padding: 15px;
-        }
         #wrap {
             overflow: hidden;
-            height: 100%;
+            height: 750px;
+            display : table;
+            width : 100%;
 
         }
-        #wrap > #main_lnb {
-            float: left;
-            width: 200px;
-        }
+
         #wrap > #content_wrap {
             float: left;
             width: 100%;
             margin-right: -200px;
         }
-        .Rectangle-3 {
-            width: 612px;
-            height: 281px;
-            background-color: #eeeeee;
-            margin: 0 auto;
-            margin-top: 150px;
-        }
-        #wrap > #content_wrap > #content { padding-right: 200px; }
-        #wrap { background: rgb(2, 44, 64); }
-        #main_lnb > ul > li > a {
-            display: block;
-            height: 40px;
-            line-height: 40px;
-            text-align: right;
-            padding-right: 15px;
 
-            color: white;
-        }
+
         #content {
             background: white;
-            border-left: 1px solid black;
-        }
 
+        }
         article {
             padding: 10px;
-            height: 1000px;
-
-        }
-        #main_footer {
-            padding: 10px;
-            border-top: 3px solid black;
-            text-align: center;
-        }
-        #layer{
-
-        }
-        #layer1 {
-            width: 100px;
-            height: 29px;
-            font-family: AppleSDGothicNeo;
-            font-size: 24px;
-            font-weight: normal;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: normal;
-            letter-spacing: normal;
-            text-align: left;
-            color: #000000;
-            display: inline-block;
-
-            padding-left: 120px;
-            padding-top: 77px;
-        }
-        #layer2{
-
-            width: 100px;
-            height: 29px;
-            font-family: AppleSDGothicNeo;
-            font-size: 24px;
-            font-weight: normal;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: normal;
-            letter-spacing: normal;
-            text-align: left;
-            color: #000000;
-            display: inline-block;
-
-            padding-left: 120px;
-            padding-top: 54px;
-        }
-        #selbox{
-            margin-left: 130px;
-            margin-right: 150px;
+            margin: 10px 0;
+            height: 750px;
+            width: 960px;
         }
 
         #image{
             display: inline-block;
-            padding-top: 40px;
-            padding-left: 30px;
+            padding-bottom: 25px;
+        }
+
+
+        /* Fixed sidenav, full height */
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(2,44,64);
+            overflow-x: hidden;
+            padding-top: 20px;
+
+            display : table-cell;
+            vertical-align : top;
+            text-align : left;
+        }
+
+        /* Style the sidenav links and the dropdown button */
+        .sidenav a, .dropdown-btn {
+            padding: 10px 8px 10px 25px;
+            text-decoration: none;
+            font-size: 17px;
+            color: #818181;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* On mouse-over */
+        .sidenav a:hover, .dropdown-btn:hover {
+            color: #f1f1f1;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            font-size: 20px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        /* Add an active class to the active dropdown button */
+        .active {
+            background-color: none;
+            color: white;
+        }
+
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+            display: none;
+            background-color: #262626;
+            padding-left: 15px;
+        }
+
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
+        }
+
+        /* Some media queries for responsiveness */
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
+        #content_wrap{
+            display : table-cell;
+            vertical-align : top;
+            text-align : left;
+            width : 800px;
+            padding-left: 250px;
+            padding-top: 10px;
+
+
+        }
+        #head{
+            font-size: 25px;
+            height: 40px;
+
+        }
+        #line{
+            width: 100%;
+
         }
 
         #account {
             float: right;
-            height: 30px;
+            margin: -5px 40px;
+        }
+        #opt{
+            margin-top: 50px;
+            margin-right: 100px;
+        }
+        #art{
+            width: 700px;
         }
 
+        #bt{
+            display: inline-block;
+            padding: 2px;
+
+        }
     </style>
 </head>
 <body>
-    <!--<nav>
-        <div id="account">
-            <div id="hello" th:id="printHello" style="float: left; margin: 10px 10px">
-                <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
-            </div>
-            <div id="btnsignout" th:id="signoutBtn" style="float: left; margin: 10px 10px">
-                <form th:action="@{/logout}" method="post">
-                    <input type="submit" value="Sign Out"/>
-                </form>
-            </div>
-        </div>
-    </nav>-->
-    <div id="wrap">
-        <nav id="main_lnb">
-            <ul>
+</nav>
+<div id="wrap">
+    <nav id="main_lnb">
+        <ul>
+            <div class="sidenav">
                 <div id = "image">
-                    <img src = "/img/jnutong-logo.png">
+                    <a href="hello">
+                        <img src = "/img/jnutong-logo.png">
+                    </a>
                 </div>
-                <div id="padding_height"></div>
-                <li><a href="#">버스 관리</a></li>
-                <hr noshade size="1">
-                <li><a href="#">기타 관리</a></li>
-                <hr noshade size="1">
+                <button class="dropdown-btn">버스 관리
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="/bus_one">시내 버스</a>
+                    <a href="/bus_two">교내 버스</a>
+                </div>
+                <a href="#contact">기타 관리</a>
+            </div>
 
-            </ul>
+            <script>
+                /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+                var dropdown = document.getElementsByClassName("dropdown-btn");
+                var i;
+
+                for (i = 0; i < dropdown.length; i++) {
+                    dropdown[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var dropdownContent = this.nextElementSibling;
+                        if (dropdownContent.style.display === "block") {
+                            dropdownContent.style.display = "none";
+                        } else {
+                            dropdownContent.style.display = "block";
+                        }
+                    });
+                }
+            </script>
+        </ul>
+    </nav>
+    <section>
+        <nav>
+            <div id="account">
+                <div id="hello" th:id="printHello" style="float: left; margin: 10px 10px">
+                    <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
+                </div>
+                <div id="btnsignout" th:id="signoutBtn" style="float: left; margin: 10px 10px">
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form>
+                </div>
+            </div>
         </nav>
         <div id="content_wrap">
             <div id="content">
                 <article>
-                    <nav>
-                        <div id="account">
-                            <div id="hello" th:id="printHello" style="float: left; margin: 10px 10px">
-                                <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
-                            </div>
-                            <div id="btnsignout" th:id="signoutBtn" style="float: left; margin: 10px 10px">
-                                <form th:action="@{/logout}" method="post">
-                                    <input type="submit" value="Sign Out"/>
-                                </form>
-                            </div>
-                        </div>
-                    </nav>
-                    <h1 id="main1">관리자 페이지</h1>
-                    <hr noshade size="1">
-
-                    <div class="Rectangle-3">
-                        <ul>
-                            <li id="layer1">시내 버스</li>
-                            <select name="bus" id="selbox">
-                                <option value="">학기</option>
-                                <option value="">방학/공휴일</option>
-                            </select>
-                            <li id="layer2">교내 버스</li>
-                            <select name="bus" id="selbox">
-                                <option value="">학기</option>
-                                <option value="">방학/공휴일</option>
-                            </select>
-                        </ul>
+                    <div id = "head">
+                        관리자 페이지
                     </div>
-
+                    <hr id = "line">
+                </article>
                 </article>
             </div>
         </div>
-    </div>
-=======
-    <title>Hello World!</title>
-</head>
-<body>
-    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
->>>>>>> parent of 1470793... apply prototype management page
+    </section>
+</div>
 </body>
 </html>
