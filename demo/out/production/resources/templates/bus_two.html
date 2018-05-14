@@ -142,9 +142,13 @@
             float: right;
             margin: -5px 40px;
         }
-        #opt{
-            margin-top: 50px;
-            margin-right: 100px;
+        #optOne{
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        #optTwo{
+            margin-top: 20px;
+            margin-right: 10px;
         }
         #art{
             width: 700px;
@@ -211,10 +215,16 @@
         <div id="content_wrap">
             <div id="content">
                 <article>
-                    <div id = "head">관리자 페이지
+                    <div id = "head">교내 순환버스
                     </div>
                     <hr id = "line">
-                    <select name="option" id="opt">
+                    <select name="option" id="optOne">
+                        <!-- jnu bus location -->
+                        <option value="">선택</option>
+                        <option value="A">A 노선</option>
+                        <option value="B">B 노선</option>
+                    </select>
+                    <select name="option" id="optTwo">
                         <option value="">선택</option>
                         <option value="학기중">학기 중</option>
                         <option value="방학">방학/공휴일</option>
