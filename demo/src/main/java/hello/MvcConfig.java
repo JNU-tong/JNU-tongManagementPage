@@ -9,11 +9,17 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.sql.SQLException;
+import java.sql.Time;
 
 @Controller
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
-    private String stationName = "";
+    private String jnuStationName = "";
+    private int jnuBusStationId, jnuBusSequence, goOceanScience;
+    private String course;
+    private boolean oceanScience;
+
+    Time departureTime;
 
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/home").setViewName("home");
@@ -30,23 +36,36 @@ public class MvcConfig implements WebMvcConfigurer {
         JnuBusStationDao jnuBusStationDao = new JnuBusStationDao();
         int bus_station_id = 1;
         JnuBusStation jnuBusStation = jnuBusStationDao.get(bus_station_id);
-        System.out.println(jnuBusStation.getId());
-        stationName = jnuBusStation.getStationName();
+
+        jnuBusStationId = jnuBusStation.getId();
+        jnuStationName = jnuBusStation.getStationName();
 
         JnuBusScheduleDao jnuBusScheduleDao = new JnuBusScheduleDao();
         int jnu_bus_schedule_id = 1;
         JnuBusSchedule jnuBusSchedule = jnuBusScheduleDao.get(jnu_bus_schedule_id);
-        System.out.println(jnuBusSchedule.getId());
-        System.out.println(jnuBusSchedule.getDeparture_time());
-        System.out.println(jnuBusSchedule.getCourse());
-        System.out.println(jnuBusSchedule.getGo_ocean_science());
+
+        jnuBusSequence = jnuBusSchedule.getId();
+        departureTime = jnuBusSchedule.getDeparture_time();
+        course = jnuBusSchedule.getCourse();
+        goOceanScience = jnuBusSchedule.getGo_ocean_science();
+
+        if (goOceanScience == 1)
+            oceanScience = true;
+        else
+            oceanScience = false;
     }
 
     // thymeleaf test
     @RequestMapping("/hello")
     public String index(Model model) throws SQLException, ClassNotFoundException {
         get();
-        model.addAttribute("name", stationName);
+        model.addAttribute("jnuBusStationId", jnuBusStationId);
+        model.addAttribute("jnuStationName", jnuStationName);
+        model.addAttribute("jnuBusSequence", jnuBusSequence);
+        model.addAttribute("departureTime", departureTime);
+        model.addAttribute("course", course);
+        model.addAttribute("oceanScience", oceanScience);
+
         return "hello";
     }
 }

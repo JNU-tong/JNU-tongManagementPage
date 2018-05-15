@@ -218,8 +218,14 @@
                     </div>
                     <hr id = "line">
                     <div>
-                        <h2>Hello! <span th:text="${name}">${name}</span></h2>
-                        <div>Thymeleaf version</div>
+                        <ul>
+                            <li><h2>정류장 ID : <span th:text="${jnuBusStationId}">${jnuBusStationId}</span></h2></li>
+                            <li><h2>정류장 이름 : <span th:text="${jnuStationName}">${jnuStationName}</span></h2></li>
+                            <li><h2><span th:text="${jnuBusSequence}">${jnuBusSequence}</span> 회차</h2></li>
+                            <li><h2>출발시간 : <span th:text="${departureTime}">${departureTime}</span></h2></li>
+                            <li><h2><span th:text="${course}">${course}</span> 코스</h2></li>
+                            <li><h2>해대 4호관 : <span th:text="${oceanScience}">${oceanScience}</span></h2></li>
+                        </ul>
                     </div>
                 </article>
             </div>
